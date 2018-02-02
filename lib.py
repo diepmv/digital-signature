@@ -1,10 +1,10 @@
 import hashlib
 import rsa
-from exceptions import HashFunctionNotFound
+from mod import HashFunctionNotFound
 
 
 def hash_data(data, hash_algorithm):
-"""this function return hashed data with algorithm specified"""
+  """this function return hashed data with algorithm specified"""
   try:
     hash_function = getattr(hashlib, hash_algorithm)
   except AttributeError:
