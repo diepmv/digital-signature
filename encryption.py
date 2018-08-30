@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 
 
 msg = 'test message'
+msg = msg.encode()
 
 
 xml_string_publickey = '''
@@ -31,7 +32,7 @@ exponent = root.find('publickeyE').find('binaryData').text
 # function convert base64 encoded value to long int
 def b64tolongInt(base64value):
 	value = base64.b64decode(base64value)
-	return long(value, 16)
+	return int(value, 16)
 
 modulus = b64tolongInt(modulus)
 
